@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private static final double maxDensity  = 0.9; // Плотнсть спелого арбуза
-    private static final double minDensity  = 0.7; // Плотность перезрелого арбуза
+    private static final double maxDensity = 0.9; // Плотнсть спелого арбуза
+    private static final double minDensity = 0.7; // Плотность перезрелого арбуза
     /*
     Формы
     Сфера - Большая окружность
@@ -135,20 +135,20 @@ public class MainActivity extends AppCompatActivity {
                 double v = 4 * Math.PI / 3 * Math.pow(b, 2) * a; // Объем
                 density = mass / v;
             }
-            if(density > 1.2)
+            if(density > 1.2 || density < 0.21)
             {
                 textView.setText("Введите корректные значения");
                 textView.setTextColor(Color.parseColor("#c0392b"));
             }
             else if(density < minDensity)
             {
-                textView.setText(String.format("Арбуз недозрел (%.2f)", density));
-                textView.setTextColor(Color.parseColor("#c0392b"));
+                textView.setText(String.format("Арбуз перезрел (%.2f)", density));
+                textView.setTextColor(Color.parseColor("#2c3e50"));
             }
             else if(density > maxDensity)
             {
-                textView.setText(String.format("Арбуз перезрел (%.2f)", density));
-                textView.setTextColor(Color.parseColor("#2c3e50"));
+                textView.setText(String.format("Арбуз недозрел (%.2f)", density));
+                textView.setTextColor(Color.parseColor("#c0392b"));
             }
             else
             {
