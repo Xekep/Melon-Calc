@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) { }
         });
 
-
     }
 
     private static final double maxDensity  = 0.9; // Плотнсть спелого арбуза
